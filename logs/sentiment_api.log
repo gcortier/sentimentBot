@@ -79,3 +79,14 @@
 2025-05-27T16:38:10.024865+0200 INFO Route '/translate/' :: params is  Bonjour, comment ça va aujourdhui ?
 2025-05-27T16:38:10.024865+0200 INFO Traduction requête: Bonjour, comment ça va aujourdhui ?
 2025-05-27T16:38:10.303866+0200 INFO Traduction résultat: Hello, how are you today?
+2025-05-27T17:00:08.468668+0200 INFO Requête reçue: text="i'm happy"
+2025-05-27T17:00:08.468668+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T17:00:08.472668+0200 INFO Requête reçue: text="i'm sad"
+2025-05-27T17:00:08.473667+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T17:00:08.579668+0200 INFO Route '/' called by  testclient
+2025-05-27T17:00:08.585668+0200 INFO Route '/chat/' :: params is  Hello how is going today ?
+2025-05-27T17:00:08.585668+0200 INFO Dialogue test prompt: Hello how is going today ?
+2025-05-27T17:00:09.606668+0200 INFO Dialogue test response: I'm good, how about you?
+2025-05-27T17:00:09.615667+0200 INFO Route '/translate/' :: params is  Bonjour, comment ça va aujourdhui ?
+2025-05-27T17:00:09.615667+0200 INFO Traduction requête: Bonjour, comment ça va aujourdhui ?
+2025-05-27T17:00:09.874668+0200 INFO Traduction résultat: Hello, how are you today?

@@ -1,0 +1,13 @@
+2025-05-27T16:48:42.650784+0200 INFO Starting project sentiment_bot
+2025-05-27T16:48:54.019790+0200 INFO Starting project sentiment_bot
+2025-05-27T16:51:26.033304+0200 INFO Starting project sentiment_bot
+2025-05-27T16:51:31.665303+0200 INFO Starting project sentiment_bot
+2025-05-27T16:51:31.672306+0200 INFO Texte à analyser: bonjour mon canard
+2025-05-27T16:53:06.800341+0200 INFO Starting project sentiment_bot
+2025-05-27T16:53:13.545345+0200 INFO Starting project sentiment_bot
+2025-05-27T16:53:13.552342+0200 INFO Texte à analyser: coucouc cabard ___ result : <Response [404]>
+2025-05-27T16:53:57.597860+0200 INFO Starting project sentiment_bot
+2025-05-27T16:56:32.615430+0200 INFO Starting project sentiment_bot
+2025-05-27T16:56:39.980427+0200 INFO Starting project sentiment_bot
+2025-05-27T16:56:39.989428+0200 INFO Texte à analyser: Coucou Canard ___ result : <Response [404]>
+2025-05-27T17:02:35.751647+0200 INFO Starting project sentiment_bot

@@ -10,19 +10,19 @@ def test_root_route():
 
 
 # def test_analyse_sentiment_positive():
-response = client.post("/analyse_sentiment/", json={"texte": "i'm happy"})
+response = client.post("/analyse_sentiment/", json={"text": "i'm happy"})
 assert response.status_code == 200
 data = response.json()
 assert "pos" in data and data["pos"] > 0
 
 # def test_analyse_sentiment_negative():
-response = client.post("/analyse_sentiment/", json={"texte": "i'm sad"})
+response = client.post("/analyse_sentiment/", json={"text": "i'm sad"})
 assert response.status_code == 200
 data = response.json()
 assert "neg" in data and data["neg"] > 0
 
-# le chat bot répondtokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
-def test_chat():
+
+def test_chat_basic():
     response = client.post("/chat/", json={"prompt": "Hello how is going today ?"})
     assert response.status_code == 200
     data = response.json()

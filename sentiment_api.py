@@ -40,8 +40,8 @@ logger.add(
 sia = SentimentIntensityAnalyzer()
 app = FastAPI()
 
-class Texte(BaseModel):
-    texte: str
+class SentimentRequest(BaseModel):
+    text: str
 
 class ChatRequest(BaseModel):
     prompt: str
@@ -59,10 +59,10 @@ async def root(request: Request):
 
 
 @app.post("/analyse_sentiment/")
-def analyse_sentiment(texte_object: Texte):
+def analyse_sentiment(req: SentimentRequest):
     try:
-        logger.info(f"Requête reçue: {texte_object}")
-        sentiment = sia.polarity_scores(texte_object.texte)
+        logger.info(f"Requête reçue: {req}")
+        sentiment = sia.polarity_scores(req.text)
         logger.info(f"Résultat: {sentiment}")
         return {
             "neg": sentiment["neg"],
