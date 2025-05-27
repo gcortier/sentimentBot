@@ -21,10 +21,11 @@ logger.add(
 # Compresser les anciens logs 
    	# compression="zip",          
 # Niveau info
-   	level="INFO",               
+   	# level="INFO",               
+   	level="DEBUG",               
    	format="{time} {level} {message}"
 )
-logger.info(f"Starting project sentiment_bot")
+logger.debug(f"Starting project sentiment_bot")
 
 
 
@@ -41,15 +42,16 @@ logger.info(f"Starting project sentiment_bot")
 if "history" not in st.session_state:
     st.session_state.history = []
 
-def get_sentiment_emoji(sentiment_dict):
-    # Utilise le score compound pour déterminer le sentiment global
-    compound = sentiment_dict.get("compound", 0)
-    if compound >= 0.05:
-        return "😊"  # positif
-    elif compound <= -0.05:
+
+def classify_nlptown_label_emoji(label: str) -> str:
+    logger.debug(f"classify_nlptown_label_emoji:: {label}")
+    if label in ["1 star", "2 stars"]:
         return "😞"  # négatif
-    else:
+    elif label == "3 stars":
         return "😐"  # neutre
+    else:  # "4 stars" ou "5 stars"
+        return "😊"  # positif
+
 
 
 with st.form("chat_form", clear_on_submit=True):
@@ -63,9 +65,9 @@ if submitted and user_message:
     user_translation = r.json()["translation"]
     
     # Sentiment utilisateur
-    r = requests.post(f"{API_URL}/analyse_sentiment/", json={"text": user_message})
+    r = requests.post(f"{API_URL}/nlptown_sentiment/", json={"text": user_message})
     user_sentiment = r.json()
-    user_emoji = get_sentiment_emoji(user_sentiment)
+    user_emoji = classify_nlptown_label_emoji(user_sentiment["label"])
     
     # Réponse chatbot
     past = st.session_state.history[-1]["bot_past"] if st.session_state.history else None
@@ -75,9 +77,9 @@ if submitted and user_message:
     bot_past = chat_response.get("bot_past", None)
     
     # Sentiment bot
-    r = requests.post(f"{API_URL}/analyse_sentiment", json={"text": bot_reply})
+    r = requests.post(f"{API_URL}/nlptown_sentiment", json={"text": bot_reply})
     bot_sentiment = r.json()
-    bot_emoji = get_sentiment_emoji(bot_sentiment)
+    bot_emoji = classify_nlptown_label_emoji(bot_sentiment["label"])
     
     # Traduction bot
     # r = requests.post(f"{API_URL}/translate", json={"text": bot_reply})

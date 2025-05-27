@@ -49,3 +49,19 @@
 2025-05-27T17:39:41.210312+0200 INFO Starting project sentiment_bot
 2025-05-27T17:40:26.795309+0200 INFO Starting project sentiment_bot
 2025-05-27T17:47:14.235530+0200 INFO Starting project sentiment_bot
+2025-05-27T18:10:56.812855+0200 INFO Starting project sentiment_bot
+2025-05-27T18:11:19.798865+0200 INFO Starting project sentiment_bot
+2025-05-27T18:11:20.117861+0200 INFO Texte à analyser: Bonjour mon pote ___ result : <Response [200]>
+2025-05-27T18:12:24.354864+0200 INFO Starting project sentiment_bot
+2025-05-27T18:12:45.329869+0200 INFO Starting project sentiment_bot
+2025-05-27T18:12:45.685862+0200 INFO Texte à analyser: Ma mère est morte aujourd'hui mais j'ai gagné au Loto ___ result : <Response [200]>
+2025-05-27T18:15:24.044862+0200 DEBUG Starting project sentiment_bot
+2025-05-27T18:15:28.284864+0200 DEBUG Starting project sentiment_bot
+2025-05-27T18:15:28.436861+0200 INFO Texte à analyser: Coucou ___ result : <Response [200]>
+2025-05-27T18:15:28.537862+0200 DEBUG classify_nlptown_label_emoji:: {'label': '2 stars', 'score': 0.3368416130542755}
+2025-05-27T18:15:29.750862+0200 DEBUG classify_nlptown_label_emoji:: {'label': '5 stars', 'score': 0.5712412595748901}
+2025-05-27T18:16:47.687883+0200 DEBUG Starting project sentiment_bot
+2025-05-27T18:16:50.785880+0200 DEBUG Starting project sentiment_bot
+2025-05-27T18:16:56.939880+0200 INFO Texte à analyser: Coucou ___ result : <Response [200]>
+2025-05-27T18:16:57.035879+0200 DEBUG classify_nlptown_label_emoji:: 2 stars
+2025-05-27T18:16:58.221881+0200 DEBUG classify_nlptown_label_emoji:: 5 stars
