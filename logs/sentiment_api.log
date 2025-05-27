@@ -90,3 +90,124 @@
 2025-05-27T17:00:09.615667+0200 INFO Route '/translate/' :: params is  Bonjour, comment ça va aujourdhui ?
 2025-05-27T17:00:09.615667+0200 INFO Traduction requête: Bonjour, comment ça va aujourdhui ?
 2025-05-27T17:00:09.874668+0200 INFO Traduction résultat: Hello, how are you today?
+2025-05-27T17:19:16.384282+0200 INFO Requête reçue: text="Bonjour, comment ça va aujourd'hui ?"
+2025-05-27T17:19:16.384282+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:19:26.021286+0200 INFO Requête reçue: text="Bonjour, comment ça va aujourd'hui ?"
+2025-05-27T17:19:26.022284+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:19:26.028286+0200 INFO Route '/translate/' :: params is  Salut ma carotte
+2025-05-27T17:19:26.028286+0200 INFO Traduction requête: Salut ma carotte
+2025-05-27T17:19:26.261283+0200 INFO Traduction résultat: Hi, my carrot.
+2025-05-27T17:19:26.267282+0200 INFO Requête reçue: text='Salut ma carotte'
+2025-05-27T17:19:26.268283+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:19:26.274284+0200 INFO Route '/chat/' :: params is  Salut ma carotte
+2025-05-27T17:19:26.274284+0200 INFO Dialogue test prompt: Salut ma carotte
+2025-05-27T17:19:26.948283+0200 INFO Dialogue test response: Salut mais carotte
+2025-05-27T17:20:35.385285+0200 INFO Route '/translate/' :: params is  comment vas tu ?
+2025-05-27T17:20:35.386285+0200 INFO Traduction requête: comment vas tu ?
+2025-05-27T17:20:35.595285+0200 INFO Traduction résultat: How are you?
+2025-05-27T17:20:35.601285+0200 INFO Requête reçue: text='comment vas tu ?'
+2025-05-27T17:20:35.601285+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:20:35.607283+0200 INFO Route '/chat/' :: params is  comment vas tu ?
+2025-05-27T17:20:35.607283+0200 INFO Dialogue test prompt: comment vas tu ?
+2025-05-27T17:20:36.728283+0200 INFO Dialogue test response: I'm not sure what you mean by that.
+2025-05-27T17:24:58.816284+0200 INFO Route '/translate/' :: params is  Salut mon pote, je me sent bien
+2025-05-27T17:24:58.816284+0200 INFO Traduction requête: Salut mon pote, je me sent bien
+2025-05-27T17:24:59.144285+0200 INFO Traduction résultat: Hey, buddy, I feel good.
+2025-05-27T17:24:59.151283+0200 INFO Route '/analyse_sentiment/' :: params is  Salut mon pote, je me sent bien
+2025-05-27T17:24:59.151283+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:24:59.158285+0200 INFO Route '/chat/' :: params is  Salut mon pote, je me sent bien
+2025-05-27T17:24:59.598284+0200 INFO Dialogue test response: Merci!
+2025-05-27T17:24:59.607283+0200 INFO Route '/analyse_sentiment/' :: params is  Merci!
+2025-05-27T17:24:59.607283+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:25:40.741286+0200 INFO Route '/translate/' :: params is  tu va bien ?
+2025-05-27T17:25:40.741286+0200 INFO Traduction requête: tu va bien ?
+2025-05-27T17:25:40.913282+0200 INFO Traduction résultat: Are you okay?
+2025-05-27T17:25:40.919285+0200 INFO Route '/analyse_sentiment/' :: params is  tu va bien ?
+2025-05-27T17:25:40.920284+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:25:40.926284+0200 INFO Route '/chat/' :: params is  tu va bien ?
+2025-05-27T17:25:41.447286+0200 INFO Dialogue test response: Si, si.
+2025-05-27T17:25:41.457284+0200 INFO Route '/analyse_sentiment/' :: params is  Si, si.
+2025-05-27T17:25:41.457284+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:26:16.824285+0200 INFO Route '/translate/' :: params is  Explique moi le Lean
+2025-05-27T17:26:16.825284+0200 INFO Traduction requête: Explique moi le Lean
+2025-05-27T17:26:17.054284+0200 INFO Traduction résultat: Explain Lean to me
+2025-05-27T17:26:17.059284+0200 INFO Route '/analyse_sentiment/' :: params is  Explique moi le Lean
+2025-05-27T17:26:17.059284+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:26:17.065284+0200 INFO Route '/chat/' :: params is  Explique moi le Lean
+2025-05-27T17:26:17.865284+0200 INFO Dialogue test response: Le Lean is a good one.
+2025-05-27T17:26:17.874284+0200 INFO Route '/analyse_sentiment/' :: params is  Le Lean is a good one.
+2025-05-27T17:26:17.874284+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.58, 'pos': 0.42, 'compound': 0.4404}
+2025-05-27T17:29:35.282286+0200 INFO Route '/translate/' :: params is  Ola mon pote ça va ?
+2025-05-27T17:29:35.282286+0200 INFO Traduction requête: Ola mon pote ça va ?
+2025-05-27T17:29:35.650283+0200 INFO Traduction résultat: Ola, buddy, are you okay?
+2025-05-27T17:29:35.656282+0200 INFO Route '/analyse_sentiment/' :: params is  Ola mon pote ça va ?
+2025-05-27T17:29:35.656282+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:29:35.663282+0200 INFO Route '/chat/' :: params is  Ola mon pote ça va ?
+2025-05-27T17:29:36.262285+0200 INFO Dialogue test response: Ola mon pote
+2025-05-27T17:29:36.272282+0200 INFO Route '/analyse_sentiment/' :: params is  Ola mon pote
+2025-05-27T17:29:36.272282+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:29:48.826286+0200 INFO Route '/translate/' :: params is  Je suis super en forme aujourd'hui
+2025-05-27T17:29:48.826286+0200 INFO Traduction requête: Je suis super en forme aujourd'hui
+2025-05-27T17:29:49.078283+0200 INFO Traduction résultat: I'm great today.
+2025-05-27T17:29:49.082285+0200 INFO Route '/analyse_sentiment/' :: params is  Je suis super en forme aujourd'hui
+2025-05-27T17:29:49.083284+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.562, 'pos': 0.438, 'compound': 0.5994}
+2025-05-27T17:29:49.088285+0200 INFO Route '/chat/' :: params is  Je suis super en forme aujourd'hui
+2025-05-27T17:29:50.596282+0200 INFO Dialogue test response: Je suis super en forme aujourd'hui
+2025-05-27T17:29:50.605284+0200 INFO Route '/analyse_sentiment/' :: params is  Je suis super en forme aujourd'hui
+2025-05-27T17:29:50.605284+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.562, 'pos': 0.438, 'compound': 0.5994}
+2025-05-27T17:30:09.676287+0200 INFO Route '/translate/' :: params is  mais ma mère est morte mais c'est impeccable
+2025-05-27T17:30:09.677291+0200 INFO Traduction requête: mais ma mère est morte mais c'est impeccable
+2025-05-27T17:30:10.205282+0200 INFO Traduction résultat: But my mother's dead, but it's impeccable.
+2025-05-27T17:30:10.211286+0200 INFO Route '/analyse_sentiment/' :: params is  mais ma mère est morte mais c'est impeccable
+2025-05-27T17:30:10.212283+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:30:10.217284+0200 INFO Route '/chat/' :: params is  mais ma mère est morte mais c'est impeccable
+2025-05-27T17:30:11.252284+0200 INFO Dialogue test response: Mais c'est pas faux.
+2025-05-27T17:30:11.262284+0200 INFO Route '/analyse_sentiment/' :: params is  Mais c'est pas faux.
+2025-05-27T17:30:11.263285+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:33:19.109298+0200 INFO Route '/translate/' :: params is  Ma mère est morte et j'ai gagné au loto
+2025-05-27T17:33:19.109298+0200 INFO Traduction requête: Ma mère est morte et j'ai gagné au loto
+2025-05-27T17:33:19.444299+0200 INFO Traduction résultat: My mother died and I won the lottery.
+2025-05-27T17:33:19.450298+0200 INFO Route '/analyse_sentiment/' :: params is  Ma mère est morte et j'ai gagné au loto
+2025-05-27T17:33:19.451299+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:33:19.457299+0200 INFO Route '/chat/' :: params is  Ma mère est morte et j'ai gagné au loto
+2025-05-27T17:33:21.065297+0200 INFO Dialogue test response: J'ai pas mal, mais je me suis pas mal.
+2025-05-27T17:33:21.073299+0200 INFO Route '/analyse_sentiment/' :: params is  J'ai pas mal, mais je me suis pas mal.
+2025-05-27T17:33:21.074299+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:34:30.744298+0200 INFO Route '/translate/' :: params is  Ma mère est morte et j'ai gagné au loto
+2025-05-27T17:34:30.744298+0200 INFO Traduction requête: Ma mère est morte et j'ai gagné au loto
+2025-05-27T17:34:31.033300+0200 INFO Traduction résultat: My mother died and I won the lottery.
+2025-05-27T17:34:31.039302+0200 INFO Route '/analyse_sentiment/' :: params is  Ma mère est morte et j'ai gagné au loto
+2025-05-27T17:34:31.039302+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:34:31.045299+0200 INFO Route '/chat/' :: params is  Ma mère est morte et j'ai gagné au loto
+2025-05-27T17:34:32.612297+0200 INFO Dialogue test response: J'ai pas mal, mais je me suis pas mal.
+2025-05-27T17:34:32.620298+0200 INFO Route '/analyse_sentiment/' :: params is  J'ai pas mal, mais je me suis pas mal.
+2025-05-27T17:34:32.620298+0200 INFO Résultat: {'neg': 0.0, 'neu': 1.0, 'pos': 0.0, 'compound': 0.0}
+2025-05-27T17:36:36.632309+0200 INFO Route '/translate/' :: params is  Ma mère est morte et j'ai gagné au loto
+2025-05-27T17:36:36.632309+0200 INFO Traduction requête: Ma mère est morte et j'ai gagné au loto
+2025-05-27T17:36:36.887310+0200 INFO Traduction résultat: My mother died and I won the lottery.
+2025-05-27T17:53:18.650817+0200 INFO Route '/analyse_sentiment/' :: params is  i'm happy
+2025-05-27T17:53:18.650817+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T17:53:18.655820+0200 INFO Route '/analyse_sentiment/' :: params is  i'm sad
+2025-05-27T17:53:18.655820+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T17:53:18.666817+0200 INFO Route '/' called by  testclient
+2025-05-27T17:53:18.675816+0200 INFO Route '/chat/' :: params is  Hello how is going today ?
+2025-05-27T17:53:19.583814+0200 INFO Dialogue test response: I'm good, how about you?
+2025-05-27T17:53:19.592818+0200 INFO Route '/translate/' :: params is  Bonjour, comment ça va aujourdhui ?
+2025-05-27T17:53:19.592818+0200 INFO Traduction requête: Bonjour, comment ça va aujourdhui ?
+2025-05-27T17:53:19.827817+0200 INFO Traduction résultat: Hello, how are you today?
+2025-05-27T17:53:19.834815+0200 INFO Route '/nlptown_sentiment/' :: params is  I love this product!
+2025-05-27T17:53:20.382815+0200 INFO Résultat nlptown: {'label': '5 stars', 'score': 0.9135048389434814}
+2025-05-27T17:55:53.504329+0200 INFO Route '/analyse_sentiment/' :: params is  i'm happy
+2025-05-27T17:55:53.505331+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T17:55:53.510330+0200 INFO Route '/analyse_sentiment/' :: params is  i'm sad
+2025-05-27T17:55:53.511330+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T17:55:53.521331+0200 INFO Route '/' called by  testclient
+2025-05-27T17:55:53.528330+0200 INFO Route '/chat/' :: params is  Hello how is going today ?
+2025-05-27T17:55:55.655330+0200 INFO Dialogue test response: I'm good, how about you?
+2025-05-27T17:55:55.665329+0200 INFO Route '/translate/' :: params is  Bonjour, comment ça va aujourdhui ?
+2025-05-27T17:55:55.665329+0200 INFO Traduction requête: Bonjour, comment ça va aujourdhui ?
+2025-05-27T17:55:56.009330+0200 INFO Traduction résultat: Hello, how are you today?
+2025-05-27T17:55:56.020332+0200 INFO Route '/nlptown_sentiment/' :: params is  I love this product!
+2025-05-27T17:55:56.142330+0200 INFO Résultat nlptown: {'label': '5 stars', 'score': 0.9135048389434814}
+2025-05-27T17:55:56.152331+0200 INFO Route '/nlptown_sentiment/' :: params is  It's a raining day!
+2025-05-27T17:55:56.223330+0200 INFO Résultat nlptown: {'label': '3 stars', 'score': 0.25760626792907715}

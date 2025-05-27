@@ -58,3 +58,4 @@ Mod0Bref1Topics/
 - [Streamlit Documentation](https://docs.streamlit.io/) 
 - https://huggingface.co/microsoft/DialoGPT-medium
 - https://huggingface.co/docs/transformers/installation
+- https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment?library=transformers

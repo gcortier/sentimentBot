@@ -37,3 +37,19 @@ def test_translate_basic():
     assert "translation" in data
     assert isinstance(data["translation"], str)
     assert len(data["translation"]) > 0
+
+def test_nlptown_sentiment_high():
+    response = client.post("/nlptown_sentiment/", json={"text": "I love this product!"})
+    assert response.status_code == 200
+    data = response.json()
+    assert "label" in data
+    assert data["label"] in ["1 star", "2 stars", "3 stars", "4 stars", "5 stars"]
+    assert "score" in data
+    
+def test_nlptown_sentiment_low():
+    response = client.post("/nlptown_sentiment/", json={"text": "It's a raining day!"})
+    assert response.status_code == 200
+    data = response.json()
+    assert "label" in data
+    assert data["label"] in ["1 star", "2 stars", "3 stars", "4 stars", "5 stars"]
+    assert "score" in data
