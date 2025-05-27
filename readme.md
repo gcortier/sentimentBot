@@ -6,8 +6,10 @@
 - Windows :  `.venv\Scripts\Activate.ps1`
 - macOS/Linux: `source .venv/bin/activate`
 
-## installation des bibliothèques de base
+## installation des bibliothèques de chat bot
 - `pip install transformers torch`
+## installation des bibliothèques pour model NLP
+- `pip install sentencepiece sacremoses`
 - ## installation des bibliothèques pour l'API FastAPI et le client Streamlit
 - `pip install nltk fastapi streamlit uvicorn requests pydantic loguru`
 - ## installation des bibliothèques pour les tests unitaires
@@ -33,9 +35,7 @@
 ## Lancer les tests
 Pour exécuter les tests unitaires sur l'API FastAPI :
 
-```powershell
-pytest test_sentiment_api.py
-```
+`pytest test_sentiment_api.py`
 
 ## Arborescence du projet
 
@@ -56,3 +56,5 @@ Mod0Bref1Topics/
 
 ## Documentations :
 - [Streamlit Documentation](https://docs.streamlit.io/) 
+- https://huggingface.co/microsoft/DialoGPT-medium
+- https://huggingface.co/docs/transformers/installation

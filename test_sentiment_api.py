@@ -29,3 +29,11 @@ def test_chat():
     assert "response" in data
     assert isinstance(data["response"], str)
     assert len(data["response"]) > 0
+
+def test_translate_basic():
+    response = client.post("/translate/", json={"text": "Bonjour, comment ça va aujourdhui ?"})
+    assert response.status_code == 200
+    data = response.json()
+    assert "translation" in data
+    assert isinstance(data["translation"], str)
+    assert len(data["translation"]) > 0

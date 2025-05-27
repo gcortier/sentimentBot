@@ -31,3 +31,51 @@
 2025-05-27T15:50:44.323016+0200 INFO Route '/' called by  testclient
 2025-05-27T15:50:44.330016+0200 INFO Dialogue test prompt: Hello how is going today ?
 2025-05-27T15:50:45.557016+0200 INFO Dialogue test response: I'm good, how about you?
+2025-05-27T16:20:29.370313+0200 INFO Requête reçue: texte="i'm happy"
+2025-05-27T16:20:29.371314+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T16:20:29.378315+0200 INFO Requête reçue: texte="i'm sad"
+2025-05-27T16:20:29.378315+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T16:20:29.425313+0200 INFO Route '/' called by  testclient
+2025-05-27T16:20:29.432313+0200 INFO Dialogue test prompt: Hello how is going today ?
+2025-05-27T16:20:30.645311+0200 INFO Dialogue test response: I'm good, how about you?
+2025-05-27T16:28:50.666838+0200 INFO Requête reçue: texte="i'm happy"
+2025-05-27T16:28:50.666838+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T16:28:50.672840+0200 INFO Requête reçue: texte="i'm sad"
+2025-05-27T16:28:50.672840+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T16:28:50.682839+0200 INFO Route '/' called by  testclient
+2025-05-27T16:28:50.692842+0200 INFO Dialogue test prompt: Hello how is going today ?
+2025-05-27T16:28:51.979837+0200 INFO Dialogue test response: I'm good, how about you?
+2025-05-27T16:32:04.441840+0200 INFO Requête reçue: texte="i'm happy"
+2025-05-27T16:32:04.441840+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T16:32:04.446839+0200 INFO Requête reçue: texte="i'm sad"
+2025-05-27T16:32:04.446839+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T16:32:04.454839+0200 INFO Route '/' called by  testclient
+2025-05-27T16:32:04.461839+0200 INFO Dialogue test prompt: Hello how is going today ?
+2025-05-27T16:32:05.471840+0200 INFO Dialogue test response: I'm good, how about you?
+2025-05-27T16:34:56.790840+0200 INFO Requête reçue: texte="i'm happy"
+2025-05-27T16:34:56.799839+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T16:34:56.806840+0200 INFO Requête reçue: texte="i'm sad"
+2025-05-27T16:34:56.806840+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T16:34:56.816842+0200 INFO Route '/' called by  testclient
+2025-05-27T16:34:56.829841+0200 INFO Dialogue test prompt: Hello how is going today ?
+2025-05-27T16:34:59.928837+0200 INFO Dialogue test response: I'm good, how about you?
+2025-05-27T16:36:52.406865+0200 INFO Requête reçue: texte="i'm happy"
+2025-05-27T16:36:52.406865+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T16:36:52.420867+0200 INFO Requête reçue: texte="i'm sad"
+2025-05-27T16:36:52.420867+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T16:36:52.435866+0200 INFO Route '/' called by  testclient
+2025-05-27T16:36:52.465867+0200 INFO Dialogue test prompt: Hello how is going today ?
+2025-05-27T16:36:54.278867+0200 INFO Dialogue test response: I'm good, how about you?
+2025-05-27T16:36:54.289868+0200 INFO Route '/translate/' :: params is  Bonjour, comment ça va aujourdhui ?
+2025-05-27T16:36:54.289868+0200 INFO Traduction requête: Bonjour, comment ça va aujourdhui ?
+2025-05-27T16:36:55.281866+0200 INFO Traduction résultat: Hello, how are you today?
+2025-05-27T16:38:08.526867+0200 INFO Requête reçue: texte="i'm happy"
+2025-05-27T16:38:08.526867+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T16:38:08.534868+0200 INFO Requête reçue: texte="i'm sad"
+2025-05-27T16:38:08.534868+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T16:38:08.550866+0200 INFO Route '/' called by  testclient
+2025-05-27T16:38:08.570868+0200 INFO Dialogue test prompt: Hello how is going today ?
+2025-05-27T16:38:10.014866+0200 INFO Dialogue test response: I'm good, how about you?
+2025-05-27T16:38:10.024865+0200 INFO Route '/translate/' :: params is  Bonjour, comment ça va aujourdhui ?
+2025-05-27T16:38:10.024865+0200 INFO Traduction requête: Bonjour, comment ça va aujourdhui ?
+2025-05-27T16:38:10.303866+0200 INFO Traduction résultat: Hello, how are you today?
