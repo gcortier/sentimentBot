@@ -3,3 +3,31 @@
 2025-05-27T15:27:48.377089+0200 INFO Requête reçue: texte="i'm sad"
 2025-05-27T15:27:48.377089+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
 2025-05-27T15:27:48.384089+0200 INFO Route '/' called by  testclient
+2025-05-27T15:38:14.156042+0200 INFO Requête reçue: texte="i'm happy"
+2025-05-27T15:38:14.156042+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T15:38:14.166041+0200 INFO Requête reçue: texte="i'm sad"
+2025-05-27T15:38:14.166041+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T15:38:14.175041+0200 INFO Route '/' called by  testclient
+2025-05-27T15:38:14.183041+0200 INFO Dialogue test prompt: Bonjour, comment ça va ?
+2025-05-27T15:38:16.762038+0200 INFO Dialogue test response: Je suis pas.
+2025-05-27T15:48:32.456016+0200 INFO Requête reçue: texte="i'm happy"
+2025-05-27T15:48:32.456016+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T15:48:32.462018+0200 INFO Requête reçue: texte="i'm sad"
+2025-05-27T15:48:32.462018+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T15:48:32.470016+0200 INFO Route '/' called by  testclient
+2025-05-27T15:48:32.478016+0200 INFO Dialogue test prompt: Bonjour, comment ça va ?
+2025-05-27T15:48:33.237016+0200 INFO Dialogue test response: Je suis pas.
+2025-05-27T15:49:48.669016+0200 INFO Requête reçue: texte="i'm happy"
+2025-05-27T15:49:48.669016+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T15:49:48.674017+0200 INFO Requête reçue: texte="i'm sad"
+2025-05-27T15:49:48.674017+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T15:49:48.682017+0200 INFO Route '/' called by  testclient
+2025-05-27T15:49:48.689017+0200 INFO Dialogue test prompt: Comment t'appelles tu ?
+2025-05-27T15:49:49.844016+0200 INFO Dialogue test response: Comment t'appelles tu?
+2025-05-27T15:50:44.310016+0200 INFO Requête reçue: texte="i'm happy"
+2025-05-27T15:50:44.311017+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T15:50:44.315016+0200 INFO Requête reçue: texte="i'm sad"
+2025-05-27T15:50:44.316017+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T15:50:44.323016+0200 INFO Route '/' called by  testclient
+2025-05-27T15:50:44.330016+0200 INFO Dialogue test prompt: Hello how is going today ?
+2025-05-27T15:50:45.557016+0200 INFO Dialogue test response: I'm good, how about you?

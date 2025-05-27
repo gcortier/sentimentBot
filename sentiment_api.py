@@ -38,6 +38,9 @@ app = FastAPI()
 class Texte(BaseModel):
     texte: str
 
+class DialogueRequest(BaseModel):
+    prompt: str
+
 @app.get("/")
 async def root(request: Request):
     logger.info(f"Route '{request.url.path}' called by  {request.client.host}")
@@ -59,3 +62,16 @@ def analyse_sentiment(texte_object: Texte):
     except Exception as e:
         logger.error(f"Erreur lors de l'analyse: {e}")
         raise HTTPException(status_code=500, detail="Erreur lors de l'analyse du sentiment.")
+
+@app.post("/chat/")
+def chat(req: DialogueRequest):
+    try:
+        logger.info(f"Dialogue test prompt: {req.prompt}")
+        input_ids = tokenizer.encode(req.prompt + tokenizer.eos_token, return_tensors="pt")
+        output = model.generate(input_ids, max_length=100)
+        response = tokenizer.decode(output[:, input_ids.shape[-1]:][0], skip_special_tokens=True)
+        logger.info(f"Dialogue test response: {response}")
+        return {"response": response}
+    except Exception as e:
+        logger.error(f"Erreur chat: {e}")
+        raise HTTPException(status_code=500, detail="Erreur lors du test dialogGPT.")

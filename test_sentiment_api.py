@@ -20,3 +20,12 @@ response = client.post("/analyse_sentiment/", json={"texte": "i'm sad"})
 assert response.status_code == 200
 data = response.json()
 assert "neg" in data and data["neg"] > 0
+
+# le chat bot répondtokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
+def test_chat():
+    response = client.post("/chat/", json={"prompt": "Hello how is going today ?"})
+    assert response.status_code == 200
+    data = response.json()
+    assert "response" in data
+    assert isinstance(data["response"], str)
+    assert len(data["response"]) > 0
