@@ -4,6 +4,12 @@ from pydantic import BaseModel
 from loguru import logger
 import os
 
+#DialogGPT
+from transformers import AutoModelForCausalLM, AutoTokenizer
+import torch
+
+tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
+model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
 
 # === CONFIGURATION LOGURU ===
 # Création dossier si n'existe pas

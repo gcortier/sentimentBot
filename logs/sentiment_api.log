@@ -1,0 +1,5 @@
+2025-05-27T15:27:48.371091+0200 INFO Requête reçue: texte="i'm happy"
+2025-05-27T15:27:48.372092+0200 INFO Résultat: {'neg': 0.0, 'neu': 0.213, 'pos': 0.787, 'compound': 0.5719}
+2025-05-27T15:27:48.377089+0200 INFO Requête reçue: texte="i'm sad"
+2025-05-27T15:27:48.377089+0200 INFO Résultat: {'neg': 0.756, 'neu': 0.244, 'pos': 0.0, 'compound': -0.4767}
+2025-05-27T15:27:48.384089+0200 INFO Route '/' called by  testclient

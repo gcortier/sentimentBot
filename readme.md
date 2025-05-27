@@ -7,10 +7,11 @@
 - macOS/Linux: `source .venv/bin/activate`
 
 ## installation des bibliothèques de base
-- `pip install transformers streamlit`
-- ## installation des bibliothèques
-- `pip install nltk fastapi uvicorn requests pydantic loguru`
-
+- `pip install transformers torch`
+- ## installation des bibliothèques pour l'API FastAPI et le client Streamlit
+- `pip install nltk fastapi streamlit uvicorn requests pydantic loguru`
+- ## installation des bibliothèques pour les tests unitaires
+- `pip install pytest httpx`
 
 ### Téléchargement du lexique VADER :
 - `python -c "import nltk; nltk.download('vader_lexicon')"`
