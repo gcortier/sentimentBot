@@ -3,13 +3,16 @@ from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 from loguru import logger
 import os
+import torch
 
 #DialogGPT
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
-
-tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
-model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
+# Define the model repo
+# https://cobusgreyling.medium.com/using-dialogpt-for-conversational-response-generation-559e2a13b191
+model_name = "microsoft/DialoGPT-medium" 
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
 
 
 # Ajout du pipeline de traduction
@@ -33,7 +36,7 @@ logger.add(
     # Compresser les anciens logs 
         # compression="zip",          
     # Niveau minimal 
-   	level="INFO",               
+   	level="DEBUG",               
    	format="{time} {level} {message}"
 )
 

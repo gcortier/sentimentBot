@@ -60,3 +60,4 @@ Mod0Bref1Topics/
 - https://huggingface.co/docs/transformers/installation
 - https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment?library=transformers
 - https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf
+- https://cobusgreyling.medium.com/using-dialogpt-for-conversational-response-generation-559e2a13b191
