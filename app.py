@@ -18,11 +18,10 @@ logger.add(
    	rotation="500 MB",            
 	# Conserver les logs 7 jours
    	retention="7 days",         
-# Compresser les anciens logs 
-   	# compression="zip",          
-# Niveau info
-   	# level="INFO",               
-   	level="DEBUG",               
+    # Compresser les anciens logs 
+        # compression="zip",          
+    # Niveau info            
+   	level="INFO",               
    	format="{time} {level} {message}"
 )
 logger.debug(f"Starting project sentiment_bot")

@@ -59,3 +59,4 @@ Mod0Bref1Topics/
 - https://huggingface.co/microsoft/DialoGPT-medium
 - https://huggingface.co/docs/transformers/installation
 - https://huggingface.co/nlptown/bert-base-multilingual-uncased-sentiment?library=transformers
+- https://huggingface.co/bartowski/Meta-Llama-3.1-8B-Instruct-GGUF/resolve/main/Meta-Llama-3.1-8B-Instruct-Q4_K_M.gguf

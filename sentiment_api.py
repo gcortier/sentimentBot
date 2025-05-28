@@ -8,10 +8,9 @@ import os
 from transformers import AutoModelForCausalLM, AutoTokenizer, pipeline
 
 
-import torch
-
 tokenizer = AutoTokenizer.from_pretrained("microsoft/DialoGPT-medium")
 model = AutoModelForCausalLM.from_pretrained("microsoft/DialoGPT-medium")
+
 
 # Ajout du pipeline de traduction
 translator = pipeline("translation", model="Helsinki-NLP/opus-mt-fr-en")
@@ -31,9 +30,9 @@ logger.add(
    	rotation="500MB",            
 	# Conserver les logs 7 jours
    	retention="7 days",         
-# Compresser les anciens logs 
-   	# compression="zip",          
-# Niveau minimal 
+    # Compresser les anciens logs 
+        # compression="zip",          
+    # Niveau minimal 
    	level="INFO",               
    	format="{time} {level} {message}"
 )
@@ -57,6 +56,7 @@ class TranslateRequest(BaseModel):
 
 class NlpTownSentimentRequest(BaseModel):
     text: str
+
 
 @app.get("/")
 async def root(request: Request):
@@ -87,11 +87,15 @@ def analyse_sentiment(req: SentimentRequest, request: Request):
 def chat(req: ChatRequest, request: Request):
     logger.info(f"Route '{request.url.path}' :: params is  {req.prompt}")
     try:
-        logger.debug(f"Dialogue test prompt: {req.prompt}")
-        input_ids = tokenizer.encode(req.prompt + tokenizer.eos_token, return_tensors="pt")
-        output = model.generate(input_ids, max_length=100)
+        # English preprompt to always answer in rhymes
+        preprompt = "Always answer in rhymes, like a poem or a song."
+        prompt = preprompt + "\nUser: " + req.prompt + "\nBot: "
+        #Tokenization
+        input_ids = tokenizer.encode(prompt + tokenizer.eos_token, return_tensors="pt")
+        output = model.generate(input_ids, max_length=200)
         response = tokenizer.decode(output[:, input_ids.shape[-1]:][0], skip_special_tokens=True)
-        logger.info(f"Dialogue test response: {response}")
+        logger.debug(f"/chat:: parse response: {req.prompt}\n input_ids: {input_ids}\noutput: {output}\nresponse: {response}")
+        logger.info(f"/chat:: Dialogue test response: {response}")
         return {"response": response}
     except Exception as e:
         logger.error(f"Erreur /chat: {e}")
