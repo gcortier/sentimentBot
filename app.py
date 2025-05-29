@@ -3,7 +3,7 @@ import requests
 import os
 from loguru import logger
 
-st.title("Chatbot multilingue (API FastAPI)")
+st.title("Chatbot sentimental (API FastAPI)")
 
 # FastApi URL
 API_URL = "http://127.0.0.1:9000"
@@ -23,22 +23,11 @@ logger.add(
 )
 logger.debug(f"Starting project sentiment_bot")
 
-
-
-# response = requests.post(
-#     f"{API_URL}/analyse_sentiment/",
-#     json={"text": "Bonjour, comment ça va aujourd'hui ?"})
-# # Lève une exception pour les codes d'erreur HTTP (4xx ou 5xx)
-# response.raise_for_status() 
-
-# sentiment = response.json()
-
-
-
+# historique pour stocker les échanges
 if "history" not in st.session_state:
     st.session_state.history = []
 
-
+# classification des sentiments des phrases anglaises
 def classify_nlptown_label_emoji(label: str) -> str:
     logger.debug(f"classify_nlptown_label_emoji:: {label}")
     if label in ["1 star", "2 stars"]:
@@ -48,7 +37,7 @@ def classify_nlptown_label_emoji(label: str) -> str:
     else:  # "4 stars" ou "5 stars"
         return "😊"  # positif
 
-
+# affichage de la conversation avec le sentiment et la traduction
 def display_chat(history):
     # Affiche les dialogues du plus récent au plus ancien
     for dialog in reversed(history):

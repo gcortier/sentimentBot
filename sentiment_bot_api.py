@@ -61,7 +61,7 @@ async def root(request: Request):
     logger.info(f"Route '{request.url.path}' called by  {request.client.host}")
     return {"message": "Bienvenue sur l'API"}
 
-
+# route pour le sentiment (pas utilisé dans le projet)
 @app.post("/analyse_sentiment/")
 def analyse_sentiment(req: SentimentRequest, request: Request):
     logger.info(f"Route '{request.url.path}' :: params is  {req.text}")
@@ -77,8 +77,6 @@ def analyse_sentiment(req: SentimentRequest, request: Request):
     except Exception as e:
         logger.error(f"Erreur lors de l'analyse: {e}")
         raise HTTPException(status_code=500, detail="Erreur lors de l'analyse du sentiment.")
-
-
 
 @app.post("/chat/", response_model=ChatResponse)
 def chat(req: ChatRequest, request: Request):

@@ -7,27 +7,27 @@
 - macOS/Linux: `source .venv/bin/activate`
 
 ## installation des bibliothèques de chat bot
-- `pip install transformers torch`
+`pip install transformers torch`
 ## installation des bibliothèques pour model NLP
-- `pip install sentencepiece sacremoses`
+`pip install sentencepiece sacremoses`
 - ## installation des bibliothèques pour l'API FastAPI et le client Streamlit
-- `pip install nltk fastapi streamlit uvicorn requests pydantic loguru`
+`pip install nltk fastapi streamlit uvicorn requests pydantic loguru`
 - ## installation des bibliothèques pour les tests unitaires
-- `pip install pytest httpx`
+`pip install pytest httpx`
 
 ### Téléchargement du lexique VADER :
-- `python -c "import nltk; nltk.download('vader_lexicon')"`
+`python -c "import nltk; nltk.download('vader_lexicon')"`
 
 
 ### Génération requirements.txt à chaque installation de module
-- `pip freeze > requirements.txt`
+`pip freeze > requirements.txt`
 
 ### ou directement : 
-- `pip install -r requierements.txt`
+`pip install -r requierements.txt`
 
 
 ## run server uvicorn :
-- `uvicorn sentiment_bot_api:app --host 127.0.0.1 --port 9000 --reload`
+`uvicorn sentiment_bot_api:app --host 127.0.0.1 --port 9000 --reload`
 
 ## lancer le client streamlit:
 `streamlit run app.py`
@@ -50,7 +50,7 @@ sentimentBot/
 ├── readme.md                           # Ce fichier
 ```
 
-=> https://github.com/gcortier/
+=> https://github.com/gcortier/sentimentBot
 
 ## Documentations :
 - [Streamlit Documentation](https://docs.streamlit.io/) 
