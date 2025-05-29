@@ -59,7 +59,7 @@ with st.form("chat_form", clear_on_submit=True):
 if submitted and user_message:
     # user_message => english
     r = requests.post(f"{API_URL}/translate/", json={"text": user_message})
-    user_translation = r.json()["translation"]
+    user_translation = r.json()["response"]
     logger.info(f"Texte à analyser: {user_message} ___ result : {user_translation}")
     
     # evaluation user_translation

@@ -1,4 +1,3 @@
-from nltk.sentiment import SentimentIntensityAnalyzer
 from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 from loguru import logger
@@ -35,50 +34,40 @@ logger.add(
 )
 
 
-
-sia = SentimentIntensityAnalyzer()
 app = FastAPI()
 
-class SentimentRequest(BaseModel):
+class BaseResponse(BaseModel):
+    response: str
+    
+class BaseRequest(BaseModel):
     text: str
 
 class ChatRequest(BaseModel):
     prompt: str
     history: list[str] = []  # Liste des messages précédents (alternance user/bot)
-
-class ChatResponse(BaseModel):
-    response: str
-
-class TranslateRequest(BaseModel):
-    text: str
-
-class NlpTownSentimentRequest(BaseModel):
-    text: str
+    
+class SentimentResponse(BaseModel):
+    label: str
+    score: float
 
 
-@app.get("/")
+
+
+@app.get("/",
+    response_model=BaseResponse,
+    summary="Route par defaut",
+    description="Affiche un message 'Bienvenue sur l'API' pour vérifier que l'API fonctionne."
+)
 async def root(request: Request):
-    logger.info(f"Route '{request.url.path}' called by  {request.client.host}")
-    return {"message": "Bienvenue sur l'API"}
+    logger.info(f"Route '{request.url.path}' called")
+    return {"response": "Bienvenue sur l'API"}
 
-# route pour le sentiment (pas utilisé dans le projet)
-@app.post("/analyse_sentiment/")
-def analyse_sentiment(req: SentimentRequest, request: Request):
-    logger.info(f"Route '{request.url.path}' :: params is  {req.text}")
-    try:
-        sentiment = sia.polarity_scores(req.text)
-        logger.info(f"Route '{request.url.path}' :: response is  {sentiment}")
-        return {
-            "neg": sentiment["neg"],
-            "neu": sentiment["neu"],
-            "pos": sentiment["pos"],
-            "compound": sentiment["compound"],
-        }
-    except Exception as e:
-        logger.error(f"Erreur lors de l'analyse: {e}")
-        raise HTTPException(status_code=500, detail="Erreur lors de l'analyse du sentiment.")
 
-@app.post("/chat/", response_model=ChatResponse)
+@app.post("/chat/",
+    response_model=BaseResponse,
+    summary="Envoie d'un dialogue au chatbot (DialogGPT)",
+    description="Génère une réponse du chatbot en tenant compte de l'historique de la conversation. L'historique doit être une liste alternant messages utilisateur et bot. Le prompt est le message utilisateur courant."
+)
 def chat(req: ChatRequest, request: Request):
     logger.info(f"Route '{request.url.path}' :: params is  {req.prompt}\nhistory: {req.history}")
     try:
@@ -106,20 +95,28 @@ def chat(req: ChatRequest, request: Request):
         logger.error(f"Erreur /chat: {e}")
         raise HTTPException(status_code=500, detail="Erreur lors du test dialogGPT.")
 
-@app.post("/translate/")
-def translate(req: TranslateRequest, request: Request):
+@app.post("/translate/",
+          response_model=BaseResponse,
+          summary="Traduction d'un texte en français vers l'anglais",
+          description="Utilise le modèle Helsinki-NLP/opus-mt-fr-en pour traduire un texte en français vers l'anglais. Retourne la traduction."
+)
+def translate(req: BaseRequest, request: Request):
     logger.info(f"Route '{request.url.path}' :: params is  {req.text}")
     try:
         logger.info(f"Traduction requête: {req.text}")
         translation = translator(req.text)[0]['translation_text']
         logger.info(f"Traduction résultat: {translation}")
-        return {"translation": translation}
+        return {"response": translation}
     except Exception as e:
         logger.error(f"Erreur traduction: {e}")
         raise HTTPException(status_code=500, detail="Erreur lors de la traduction.")
 
-@app.post("/nlptown_sentiment/")
-def analyse_nlptown_sentiment(req: NlpTownSentimentRequest, request: Request):
+@app.post("/nlptown_sentiment/",
+    response_model=SentimentResponse,
+    summary="Analyse le sentiment d'un texte en anglais",
+    description="Analyse le sentiment d'un texte en anglais en utilisant le modèle nlptown/bert-base-multilingual-uncased-sentiment. Retourne un label et un score de sentiment."
+)
+def analyse_nlptown_sentiment(req: BaseRequest, request: Request):
     logger.info(f"Route '{request.url.path}' :: params is  {req.text}")
     try:
         result = nlptown_sentiment(req.text)[0]
