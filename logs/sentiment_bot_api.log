@@ -24,3 +24,83 @@ response: I'm sad that you're sad.
 2025-05-29T11:08:08.707438+0200 INFO /chat:: Dialogue response: I'm sad that you're sad.
 2025-05-29T11:08:08.717442+0200 INFO Route '/nlptown_sentiment/' :: params is  I'm sad that you're sad.
 2025-05-29T11:08:08.763440+0200 INFO Résultat nlptown: {'label': '3 stars', 'score': 0.3364754021167755}
+2025-05-29T11:13:41.035357+0200 INFO Route '/translate/' :: params is  Salut mon pote
+2025-05-29T11:13:41.036358+0200 INFO Traduction requête: Salut mon pote
+2025-05-29T11:13:41.233359+0200 INFO Traduction résultat: Hey, buddy.
+2025-05-29T11:13:41.242356+0200 INFO Route '/nlptown_sentiment/' :: params is  Hey, buddy.
+2025-05-29T11:13:41.370355+0200 INFO Résultat nlptown: {'label': '5 stars', 'score': 0.5179120302200317}
+2025-05-29T11:13:41.377356+0200 INFO Route '/chat/' :: params is  Hey, buddy.
+history: []
+2025-05-29T11:13:41.930355+0200 DEBUG /chat:: parse response: Hey, buddy.
+ dialogue: Hey, buddy.<|endoftext|>
+response: Hey, buddy.
+2025-05-29T11:13:41.931358+0200 INFO /chat:: Dialogue response: Hey, buddy.
+2025-05-29T11:13:41.940358+0200 INFO Route '/nlptown_sentiment/' :: params is  Hey, buddy.
+2025-05-29T11:13:41.990359+0200 INFO Résultat nlptown: {'label': '5 stars', 'score': 0.5179120302200317}
+2025-05-29T11:13:50.141358+0200 INFO Route '/translate/' :: params is  Je me sent triste aujourd'hui
+2025-05-29T11:13:50.142357+0200 INFO Traduction requête: Je me sent triste aujourd'hui
+2025-05-29T11:13:50.392355+0200 INFO Traduction résultat: I feel sad today
+2025-05-29T11:13:50.399358+0200 INFO Route '/nlptown_sentiment/' :: params is  I feel sad today
+2025-05-29T11:13:50.447360+0200 INFO Résultat nlptown: {'label': '2 stars', 'score': 0.2997908890247345}
+2025-05-29T11:13:50.455354+0200 INFO Route '/chat/' :: params is  I feel sad today
+history: ['Hey, buddy.', 'Hey, buddy.']
+2025-05-29T11:13:51.255356+0200 DEBUG /chat:: parse response: I feel sad today
+ dialogue: Hey, buddy.<|endoftext|>I feel sad today<|endoftext|>
+response: I feel sad for you.
+2025-05-29T11:13:51.256354+0200 INFO /chat:: Dialogue response: I feel sad for you.
+2025-05-29T11:13:51.268359+0200 INFO Route '/nlptown_sentiment/' :: params is  I feel sad for you.
+2025-05-29T11:13:51.321359+0200 INFO Résultat nlptown: {'label': '2 stars', 'score': 0.3587641417980194}
+2025-05-29T11:13:59.330359+0200 INFO Route '/translate/' :: params is  raconte moi une blague
+2025-05-29T11:13:59.331361+0200 INFO Traduction requête: raconte moi une blague
+2025-05-29T11:13:59.550357+0200 INFO Traduction résultat: Tell me a joke.
+2025-05-29T11:13:59.557356+0200 INFO Route '/nlptown_sentiment/' :: params is  Tell me a joke.
+2025-05-29T11:13:59.603358+0200 INFO Résultat nlptown: {'label': '1 star', 'score': 0.6778773069381714}
+2025-05-29T11:13:59.608355+0200 INFO Route '/chat/' :: params is  Tell me a joke.
+history: ['Hey, buddy.', 'Hey, buddy.', 'I feel sad today', 'I feel sad for you.']
+2025-05-29T11:14:00.911465+0200 DEBUG /chat:: parse response: Tell me a joke.
+ dialogue: Hey, buddy.<|endoftext|>I feel sad today<|endoftext|>Tell me a joke.<|endoftext|>
+response: What's the heaviest soup in Asia? One ton.
+2025-05-29T11:14:00.912464+0200 INFO /chat:: Dialogue response: What's the heaviest soup in Asia? One ton.
+2025-05-29T11:14:00.922465+0200 INFO Route '/nlptown_sentiment/' :: params is  What's the heaviest soup in Asia? One ton.
+2025-05-29T11:14:00.973465+0200 INFO Résultat nlptown: {'label': '1 star', 'score': 0.592715859413147}
+2025-05-29T11:14:15.038466+0200 INFO Route '/translate/' :: params is  c'est marrant !
+2025-05-29T11:14:15.039465+0200 INFO Traduction requête: c'est marrant !
+2025-05-29T11:14:15.236464+0200 INFO Traduction résultat: It's funny!
+2025-05-29T11:14:15.243463+0200 INFO Route '/nlptown_sentiment/' :: params is  It's funny!
+2025-05-29T11:14:15.290470+0200 INFO Résultat nlptown: {'label': '5 stars', 'score': 0.5090513229370117}
+2025-05-29T11:14:15.296464+0200 INFO Route '/chat/' :: params is  It's funny!
+history: ['Hey, buddy.', 'Hey, buddy.', 'I feel sad today', 'I feel sad for you.', 'Tell me a joke.', "What's the heaviest soup in Asia? One ton."]
+2025-05-29T11:14:15.976464+0200 DEBUG /chat:: parse response: It's funny!
+ dialogue: Hey, buddy.<|endoftext|>I feel sad today<|endoftext|>Tell me a joke.<|endoftext|>It's funny!<|endoftext|>
+response: It's not funny!
+2025-05-29T11:14:15.977463+0200 INFO /chat:: Dialogue response: It's not funny!
+2025-05-29T11:14:15.987465+0200 INFO Route '/nlptown_sentiment/' :: params is  It's not funny!
+2025-05-29T11:14:16.032466+0200 INFO Résultat nlptown: {'label': '1 star', 'score': 0.4282474219799042}
+2025-05-29T11:14:33.807467+0200 INFO Route '/translate/' :: params is  ça me fais rire du coup je vais mieux
+2025-05-29T11:14:33.808464+0200 INFO Traduction requête: ça me fais rire du coup je vais mieux
+2025-05-29T11:14:34.140463+0200 INFO Traduction résultat: It makes me laugh. I'm better.
+2025-05-29T11:14:34.146463+0200 INFO Route '/nlptown_sentiment/' :: params is  It makes me laugh. I'm better.
+2025-05-29T11:14:34.198469+0200 INFO Résultat nlptown: {'label': '2 stars', 'score': 0.4551987946033478}
+2025-05-29T11:14:34.205464+0200 INFO Route '/chat/' :: params is  It makes me laugh. I'm better.
+history: ['Hey, buddy.', 'Hey, buddy.', 'I feel sad today', 'I feel sad for you.', 'Tell me a joke.', "What's the heaviest soup in Asia? One ton.", "It's funny!", "It's not funny!"]
+2025-05-29T11:14:34.812462+0200 DEBUG /chat:: parse response: It makes me laugh. I'm better.
+ dialogue: Hey, buddy.<|endoftext|>I feel sad today<|endoftext|>Tell me a joke.<|endoftext|>It's funny!<|endoftext|>It makes me laugh. I'm better.<|endoftext|>
+response: I'm not.
+2025-05-29T11:14:34.813464+0200 INFO /chat:: Dialogue response: I'm not.
+2025-05-29T11:14:34.823464+0200 INFO Route '/nlptown_sentiment/' :: params is  I'm not.
+2025-05-29T11:14:34.867467+0200 INFO Résultat nlptown: {'label': '1 star', 'score': 0.42276477813720703}
+2025-05-29T11:19:52.925466+0200 INFO Route '/' called by  testclient
+2025-05-29T11:19:52.974466+0200 INFO Route '/chat/' :: params is  Hello how is going today ?
+history: []
+2025-05-29T11:19:53.888464+0200 INFO /chat:: Dialogue response: I'm good, how about you?
+2025-05-29T11:19:53.898466+0200 INFO Route '/translate/' :: params is  Bonjour, comment ça va aujourdhui ?
+2025-05-29T11:19:53.911463+0200 INFO Traduction requête: Bonjour, comment ça va aujourdhui ?
+2025-05-29T11:19:54.201466+0200 INFO Traduction résultat: Hello, how are you today?
+2025-05-29T11:19:54.222463+0200 INFO Route '/nlptown_sentiment/' :: params is  I love this product!
+2025-05-29T11:19:54.340464+0200 INFO Résultat nlptown: {'label': '5 stars', 'score': 0.9135048389434814}
+2025-05-29T11:19:54.354465+0200 INFO Route '/nlptown_sentiment/' :: params is  It's a raining day!
+2025-05-29T11:19:54.405468+0200 INFO Résultat nlptown: {'label': '3 stars', 'score': 0.25760626792907715}
+2025-05-29T11:19:54.431463+0200 INFO Route '/nlptown_sentiment/' :: params is  This is the worst experience of my life. I hate everything about it. Absolutely terrible, disgusting and disappointing.
+2025-05-29T11:19:54.496465+0200 INFO Résultat nlptown: {'label': '1 star', 'score': 0.9595698118209839}
+2025-05-29T11:19:54.513464+0200 INFO Route '/nlptown_sentiment/' :: params is  Ma mère et mon père sont morts dans d'atroces souffrance et j'ai gagné au Loto aujourd'hui
+2025-05-29T11:19:54.584467+0200 INFO Résultat nlptown: {'label': '5 stars', 'score': 0.49092423915863037}

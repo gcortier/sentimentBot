@@ -34,12 +34,12 @@
 
 ## Lancer les tests
 Pour exécuter les tests unitaires sur l'API FastAPI :
-`pytest test_sentiment_api.py`
+`pytest test_sentiment_bot_api.py`
 
 ## Arborescence du projet
 
 ```
-Mod0Bref1Topics/
+sentimentBot/
 ├── .venv/                              # Environnement virtuel 
 ├── sentiment_bot_api.py                # API FastAPI pour l'analyse de sentiment
 ├── app.py                              # Application Streamlit pour l'interface utilisateur

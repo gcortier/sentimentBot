@@ -30,7 +30,7 @@ logger.add(
     "logs/sentiment_bot_api.log",
    	rotation="500MB",            
    	retention="7 days",         
-   	level="DEBUG",               
+   	level="INFO",               
    	format="{time} {level} {message}"
 )
 
@@ -84,12 +84,14 @@ def analyse_sentiment(req: SentimentRequest, request: Request):
 def chat(req: ChatRequest, request: Request):
     logger.info(f"Route '{request.url.path}' :: params is  {req.prompt}\nhistory: {req.history}")
     try:
-        # Ajoute de l'historic utilisateur
+        # Ajout de l'historique utilisateur uniquement sinon le bot "boucle" trop
         dialogue = ""
         for i, msg in enumerate(req.history):
             if i % 2 == 0:
                 dialogue += msg + tokenizer.eos_token
         dialogue += req.prompt + tokenizer.eos_token
+        
+        # tokenisation et réponse du bot
         input_ids = tokenizer.encode(dialogue, return_tensors="pt")
         attention_mask = torch.ones_like(input_ids)
         output = model.generate(
