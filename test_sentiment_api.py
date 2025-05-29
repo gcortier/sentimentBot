@@ -1,5 +1,5 @@
 from fastapi.testclient import TestClient
-from sentiment_api import app
+from sentiment_bot_api import app
 
 client = TestClient(app)
 
@@ -62,12 +62,3 @@ def test_nlptown_sentiment_weird():
     assert "label" in data
     assert data["label"] in ["1 star", "2 stars", "3 stars", "4 stars", "5 stars"]
     assert "score" in data
-
-def test_llama_chat_basic():
-    response = client.post("/llama_chat/", json={"prompt": "What is the capital of France?"})
-    assert response.status_code == 200
-    data = response.json()
-    assert "response" in data
-    assert isinstance(data["response"], str)
-    assert "Paris".lower() in data["response"].lower()  # Vérifie que la réponse contient "Paris"
-

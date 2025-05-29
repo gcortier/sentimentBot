@@ -27,14 +27,13 @@
 
 
 ## run server uvicorn :
-- `uvicorn sentiment_api:app --host 127.0.0.1 --port 9000 --reload`
+- `uvicorn sentiment_bot_api:app --host 127.0.0.1 --port 9000 --reload`
 
 ## lancer le client streamlit:
 `streamlit run app.py`
 
 ## Lancer les tests
 Pour exécuter les tests unitaires sur l'API FastAPI :
-
 `pytest test_sentiment_api.py`
 
 ## Arborescence du projet
@@ -42,13 +41,12 @@ Pour exécuter les tests unitaires sur l'API FastAPI :
 ```
 Mod0Bref1Topics/
 ├── .venv/                              # Environnement virtuel 
-├── sentiment_api.py                    # API FastAPI pour l'analyse de sentiment
+├── sentiment_bot_api.py                # API FastAPI pour l'analyse de sentiment
 ├── app.py                              # Application Streamlit pour l'interface utilisateur
 ├── requirements.txt                    # Liste des dépendances
 ├── logs/                               # Dossier pour les logs
-│   ├── sentiment_api.log               # Log de l'API FastAPI
-│   └── sentiment_streamlit.log         # Log de l'application Streamlit
-├── notebook.ipynb                      # Jupyter notebook pour tester le modèle
+│   ├── sentiment_bot_api.log           # Log de l'API FastAPI
+│   └── app.log                         # Log de l'application Streamlit
 ├── readme.md                           # Ce fichier
 ```
 

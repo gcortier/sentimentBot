@@ -27,15 +27,9 @@ os.makedirs('logs', exist_ok=True)
 logger.remove()  # Nettoie la config de base
 
 logger.add(
-	# Fichier avec timestamp
-    "logs/sentiment_api.log", # use "logs/sentiment_api_{time}.log" to use with timestamp
-	# Nouveau fichier tous les 10 Mo
+    "logs/sentiment_bot_api.log",
    	rotation="500MB",            
-	# Conserver les logs 7 jours
    	retention="7 days",         
-    # Compresser les anciens logs 
-        # compression="zip",          
-    # Niveau minimal 
    	level="DEBUG",               
    	format="{time} {level} {message}"
 )
@@ -50,6 +44,7 @@ class SentimentRequest(BaseModel):
 
 class ChatRequest(BaseModel):
     prompt: str
+    history: list[str] = []  # Liste des messages précédents (alternance user/bot)
 
 class ChatResponse(BaseModel):
     response: str
@@ -71,9 +66,8 @@ async def root(request: Request):
 def analyse_sentiment(req: SentimentRequest, request: Request):
     logger.info(f"Route '{request.url.path}' :: params is  {req.text}")
     try:
-        logger.debug(f"Requête reçue: {req}")
         sentiment = sia.polarity_scores(req.text)
-        logger.info(f"Résultat: {sentiment}")
+        logger.info(f"Route '{request.url.path}' :: response is  {sentiment}")
         return {
             "neg": sentiment["neg"],
             "neu": sentiment["neu"],
@@ -88,17 +82,25 @@ def analyse_sentiment(req: SentimentRequest, request: Request):
 
 @app.post("/chat/", response_model=ChatResponse)
 def chat(req: ChatRequest, request: Request):
-    logger.info(f"Route '{request.url.path}' :: params is  {req.prompt}")
+    logger.info(f"Route '{request.url.path}' :: params is  {req.prompt}\nhistory: {req.history}")
     try:
-        # English preprompt to always answer in rhymes
-        preprompt = "Always answer in rhymes, like a poem or a song."
-        prompt = preprompt + "\nUser: " + req.prompt + "\nBot: "
-        #Tokenization
-        input_ids = tokenizer.encode(prompt + tokenizer.eos_token, return_tensors="pt")
-        output = model.generate(input_ids, max_length=200)
+        # Ajoute de l'historic utilisateur
+        dialogue = ""
+        for i, msg in enumerate(req.history):
+            if i % 2 == 0:
+                dialogue += msg + tokenizer.eos_token
+        dialogue += req.prompt + tokenizer.eos_token
+        input_ids = tokenizer.encode(dialogue, return_tensors="pt")
+        attention_mask = torch.ones_like(input_ids)
+        output = model.generate(
+            input_ids,
+            max_length=200,
+            pad_token_id=tokenizer.eos_token_id,
+            attention_mask=attention_mask
+        )
         response = tokenizer.decode(output[:, input_ids.shape[-1]:][0], skip_special_tokens=True)
-        logger.debug(f"/chat:: parse response: {req.prompt}\n input_ids: {input_ids}\noutput: {output}\nresponse: {response}")
-        logger.info(f"/chat:: Dialogue test response: {response}")
+        logger.debug(f"/chat:: parse response: {req.prompt}\n dialogue: {dialogue}\nresponse: {response}")
+        logger.info(f"/chat:: Dialogue response: {response}")
         return {"response": response}
     except Exception as e:
         logger.error(f"Erreur /chat: {e}")
