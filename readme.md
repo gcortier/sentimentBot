@@ -6,6 +6,12 @@ Créez une application conversationnelle qui permet à l'utilisateur de dialogue
 - Afficher la traduction anglaise du message.
 - Afficher le sentiment exprimé dans le message (positif, négatif, neutre).
 
+## Actions réalisés :
+ - Ajouts des logs et des tests unitaires
+ - Gestion des bonnes pratiques pydantic pour description des routes API (Request / Response)
+ - Test de pleinnnnns d'approche pour essayer de rendre le chat plus "humain"
+ - Documentation
+ - Clean
 
 ## Problemes rencontré :
 - DialogGPT est très 'bête' et j'ai essayé surtout de trouver un moyen de le rendre le plus naturel possible.
